@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1981 Ford F-150 Restoration — J'Deja Williams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --steel: #1a1f2e; --iron: #0d1117; --blueprint: #0a1628;
+    --accent: #e8c547; --accent2: #4a9eff; --rust: #c94a2a;
+    --light: #d4cfc7; --mid: #7a8090; --dim: #2a3040;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--iron); color: var(--light); font-family: 'DM Mono', monospace; font-weight: 300; overflow-x: hidden; cursor: crosshair; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(74,158,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(74,158,255,0.03) 1px, transparent 1px), linear-gradient(rgba(74,158,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(74,158,255,0.015) 1px, transparent 1px); background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px; pointer-events: none; z-index: 0; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: linear-gradient(180deg, rgba(13,17,23,0.95) 0%, transparent 100%); backdrop-filter: blur(4px); }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 4px; color: var(--accent); text-decoration: none; }
+  .nav-back { color: var(--mid); text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s; }
+  .nav-back:hover { color: var(--accent); }
+  .project-hero { position: relative; min-height: 60vh; display: flex; align-items: flex-end; padding: 120px 48px 64px; z-index: 1; overflow: hidden; border-bottom: 1px solid var(--dim); }
+  .project-hero-bg { position: absolute; inset: 0; font-family: 'Bebas Neue', sans-serif; font-size: clamp(80px,16vw,220px); color: rgba(232,197,71,0.03); display: flex; align-items: center; justify-content: center; pointer-events: none; white-space: nowrap; user-select: none; letter-spacing: -4px; }
+  .project-hero-content { position: relative; z-index: 2; max-width: 900px; }
+  .project-number { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+  .project-number::before { content: ''; display: block; width: 48px; height: 1px; background: var(--accent); }
+  .project-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px,8vw,110px); line-height: 0.95; letter-spacing: 2px; color: var(--light); margin-bottom: 32px; }
+  .project-hero h1 span { color: var(--accent); display: block; }
+  .project-meta { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--dim); }
+  .meta-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .meta-val { font-family: 'Crimson Pro', serif; font-size: 16px; color: var(--light); }
+  .project-body { max-width: 1100px; margin: 0 auto; padding: 80px 48px; position: relative; z-index: 1; }
+  .section-label { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--accent); margin-bottom: 32px; display: flex; align-items: center; gap: 20px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--dim), transparent); }
+  .project-section { margin-bottom: 80px; }
+  .project-body h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px,4vw,52px); letter-spacing: 2px; color: var(--light); margin-bottom: 24px; }
+  .project-body p { font-family: 'Crimson Pro', serif; font-size: 19px; font-weight: 300; line-height: 1.8; color: var(--mid); margin-bottom: 20px; max-width: 720px; }
+  .project-body p strong { color: var(--light); font-weight: 400; }
+  .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4px; margin: 40px 0; }
+  .media-item { background: var(--steel); aspect-ratio: 16/10; overflow: hidden; position: relative; }
+  .media-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+  .media-item:hover img { transform: scale(1.04); }
+  .media-item video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .media-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--dim); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; border: 1px dashed var(--dim); }
+  .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 40px 0; }
+  .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+  .tag { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; border: 1px solid var(--dim); color: var(--mid); }
+  /* Specs table */
+  .specs-table { border: 1px solid var(--dim); margin: 40px 0; }
+  .spec-row { display: grid; grid-template-columns: 180px 1fr; border-bottom: 1px solid var(--dim); }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-key { padding: 16px 20px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); background: rgba(232,197,71,0.03); border-right: 1px solid var(--dim); }
+  .spec-val { padding: 16px 20px; font-family: 'Crimson Pro', serif; font-size: 16px; color: var(--light); }
+  .project-nav { border-top: 1px solid var(--dim); padding: 48px; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+  .project-nav a { color: var(--mid); text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s; }
+  .project-nav a:hover { color: var(--accent); }
+  .nav-project-title { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 2px; color: var(--light); display: block; margin-top: 4px; }
+  footer { padding: 24px 48px; border-top: 1px solid var(--dim); display: flex; justify-content: space-between; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid); position: relative; z-index: 1; }
+  @media (max-width: 768px) { nav { padding: 20px 24px; } .project-hero { padding: 100px 24px 48px; } .project-body { padding: 48px 24px; } .project-nav { padding: 32px 24px; flex-direction: column; gap: 24px; } .spec-row { grid-template-columns: 1fr; } .spec-key { border-right: none; border-bottom: 1px solid var(--dim); } footer { padding: 20px 24px; flex-direction: column; gap: 8px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="portfolio.html" class="nav-logo">J.WILLIAMS</a>
+  <a href="portfolio.html" class="nav-back">← Back to Portfolio</a>
+</nav>
+
+<div class="project-hero">
+  <div class="project-hero-bg">BULLNOSE</div>
+  <div class="project-hero-content">
+    <div class="project-number">04 — Wiring · Restoration</div>
+    <h1>1981 Ford<br><span>F-150 4x4</span></h1>
+    <div class="project-meta">
+      <div class="meta-item">
+        <div class="meta-label">Vehicle</div>
+        <div class="meta-val">1981 Bullnose Ford F-150</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Focus</div>
+        <div class="meta-val">Off-Road Restoration</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Status</div>
+        <div class="meta-val">In Progress</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="project-body">
+
+  <div class="project-section">
+    <div class="section-label">Overview</div>
+    <h2>Full Build Restoration</h2>
+    <p>A personal engineering project — the full restoration of a 1981 Bullnose Ford F-150, converting it for off-road use. This includes <strong>performance upgrades, rugged body modifications, and a complete wiring kit installation</strong> to support future electrical power demands from auxiliary systems and lighting.</p>
+    <p>Every system on the truck is being evaluated, rebuilt or upgraded to modern reliability standards while preserving the character of the classic Bullnose platform.</p>
+    <div class="tags">
+      <span class="tag">Wiring</span>
+      <span class="tag">Off-Road Build</span>
+      <span class="tag">Suspension</span>
+      <span class="tag">Restoration</span>
+      <span class="tag">Fabrication</span>
+      <span class="tag">Electrical</span>
+    </div>
+  </div>
+
+  <!-- Specs -->
+  <div class="project-section">
+    <div class="section-label">Vehicle Specs</div>
+    <div class="specs-table">
+      <div class="spec-row">
+        <div class="spec-key">Year</div>
+        <div class="spec-val">1981</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-key">Model</div>
+        <div class="spec-val">Ford F-150 Bullnose 4x4</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-key">Drive</div>
+        <div class="spec-val">4-Wheel Drive</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-key">Build Goal</div>
+        <div class="spec-val">Off-Road Performance Restoration</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-key">Electrical</div>
+        <div class="spec-val">Complete wiring kit — future auxiliary systems</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-section">
+    <div class="section-label">Photos</div>
+    <!--
+      TO ADD PHOTOS:
+      <img src="images/f150-before.jpg" alt="F-150 Before Restoration">
+      <img src="images/f150-wiring.jpg" alt="Wiring Installation">
+      <img src="images/f150-progress.jpg" alt="Build Progress">
+    -->
+    <div class="media-grid">
+      <div class="media-item">
+        <div class="media-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<img src="images/wiring.jpeg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+      </div>
+      <div class="media-item">
+        <div class="media-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<img src="images/wiring1.jpeg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+      </div>
+      <div class="media-item">
+        <div class="media-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+  <img src="images/enginebay.jpeg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-section">
+    <div class="section-label">Video</div>
+    <!--
+      TO ADD LOCAL VIDEO:
+      <video controls style="width:100%; display:block;">
+        <source src="videos/f150-build.mp4" type="video/mp4">
+      </video>
+
+      TO EMBED YOUTUBE:
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+      </div>
+    -->
+    <div class="media-item" style="aspect-ratio:16/9; max-width:800px;">
+      <div class="media-placeholder">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+<video controls style="width:100%; height:100%; object-fit:contain;">
+        <source src="images/enginerun.MOV" type="video/mp4" >
+      </video>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-section">
+    <div class="section-label">Build Notes</div>
+    <h2>The Long Game</h2>
+    <p>Classic truck restoration is as much about <strong>troubleshooting 40-year-old engineering decisions</strong> as it is about applying new ones. Sourcing period-correct parts, working around rust damage, and adapting modern electrical systems to vintage architecture all require a blend of mechanical intuition and systematic problem-solving.</p>
+    <p>The wiring overhaul alone required tracing and documenting the entire original harness before designing a modern replacement that could support future off-road lighting, winch, and auxiliary power demands.</p>
+  </div>
+
+</div>
+
+<div class="project-nav">
+  <a href="project3.html">← Lexus Logo Casting</a>
+  <a href="project1.html" style="text-align:right;">
+    Back to First
+    <span><span class="nav-project-title">Steam Generator →</span></span>
+  </a>
+</div>
+
+<footer>
+  <span>© 2026 J'Deja Williams · Mechanical Engineer</span>
+  <span>Greensboro, NC</span>
+</footer>
+
+</body>
+</html>
